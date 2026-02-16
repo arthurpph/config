@@ -17,7 +17,18 @@ link() {
     src="$DOTFILES/$1"
     dest="$2"
 
-    mkdir -p "$(dirname "$dest")"
+    if [[ -e "$dest" && ! -L "$dest" ]]; then
+        echo "The path $dest already exists and its not a symlink."
+
+        read -p "Want to overwrite it? (Y/n) " answer
+        if [[ "$answer" != "y" && "$answer" != "Y" ]]; then
+            echo "Skipping $dest"
+            return
+        fi
+
+        echo "Removing $dest..."
+        rm -rf "$dest"
+    fi
     ln -sfn "$src" "$dest"
     echo "Linked: $src → $dest"
 }
