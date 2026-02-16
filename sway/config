@@ -55,9 +55,6 @@ output * bg /home/arthurpiana/wallpapers/WallPaper\ 16.jpg fill
 #       middle_emulation enabled
 #   }
 #
-#   input type:keyboard {
-#       xkb_layout "eu"
-#   }
 #
 # You can also configure each device individually.
 # Read `man 5 sway-input` for more information about this section.
@@ -246,6 +243,12 @@ for_window [title="Spotify"] move container to workspace number 4
 
 # fixes sway flameshot multi-monitor issue
 for_window [app_id="flameshot"] border pixel 0, floating enable, fullscreen disable, move absolute position 0 0
+
+input type:keyboard {
+  xkb_layout "us,br"
+  xkb_variant ",abnt2"
+  xkb_options "grp:alt_shift_toggle"
+}
 
 include /etc/sway/config.d/*
 

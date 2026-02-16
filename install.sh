@@ -37,5 +37,6 @@ echo "[2/3] Creating symlinks..."
 link nvim ~/.config/nvim
 link sway ~/.config/sway
 link tmux ~/.config/tmux
+link waybar ~/.config/waybar
 
 echo "[3/3] Done! Dotfiles successfully installed."
