@@ -1,0 +1,51 @@
+{
+  "layer": "bottom",
+  "position": "bottom",
+  "modules-left": ["sway/workspaces", "sway/mode"],
+  "modules-right": ["network#spd", "clock", "tray", "pulseaudio", "battery"],
+  "tray": {
+      "icon-size": 21,
+      "spacing": 10
+  },
+  "clock": {
+      "interval": 1,
+      "format": "{:%H:%M:%S}",
+      "tooltip-format": "{:%H:%M:%S}",
+      "on-click": "gnome-calendar"
+  },
+  "pulseaudio": {
+    "scroll-step": 1, 
+    "format": "{icon} {volume}%",
+    "format-muted": "",
+    "format-icons": {
+        "default": ["", "", " "]
+    },
+    "on-click": "pavucontrol"
+  },
+  "battery": {
+      "states": {
+          "warning": 30,
+          "critical": 15
+      },
+      "format": "{icon} {percentage}%",
+      "format-charging": "🔌 {percentage}%",
+      "format-plugged": "🔌 {percentage}%",
+      "format-alt": "{percentage}%",
+      "format-icons": ["🔋", "🟩", "🟨", "🟧", "🟥", "🔴"] 
+  },
+  "custom/music": {
+      "format": "  {}",
+      "escape": true,
+      "interval": 5,
+      "tooltip": false,
+      "exec": "playerctl metadata --format='{{ title }}'",
+      "on-click": "playerctl play-pause",
+      "max-length": 50
+  },
+  "network#spd": {
+      "interval": 1,
+      "format": "↓ {bandwidthDownBytes} ↑ {bandwidthUpBytes}",
+      "format-wifi": "↓ {bandwidthDownBytes} ↑ {bandwidthUpBytes}",
+      "format-ethernet": "↓ {bandwidthDownBytes} ↑ {bandwidthUpBytes}"
+  }
+}
