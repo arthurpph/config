@@ -10,8 +10,8 @@
   "clock": {
       "interval": 1,
       "format": "{:%H:%M:%S}",
-      "tooltip-format": "{:%H:%M:%S}",
-      "on-click": "gnome-calendar"
+      "format-alt": "{:%a, %d. %b}",
+      "tooltip-format": "{:%a, %d. %b}",
   },
   "pulseaudio": {
     "scroll-step": 1, 
@@ -27,10 +27,10 @@
           "warning": 30,
           "critical": 15
       },
-      "format": "{icon} {percentage}%",
-      "format-charging": "🔌 {percentage}%",
-      "format-plugged": "🔌 {percentage}%",
-      "format-alt": "{percentage}%",
+      "format": "{icon} {capacity}%",
+      "format-charging": "🔌 {capacity}%",
+      "format-plugged": "🔌 {capacity}%",
+      "format-alt": "{capacity}%",
       "format-icons": ["🔋", "🟩", "🟨", "🟧", "🟥", "🔴"] 
   },
   "custom/music": {
