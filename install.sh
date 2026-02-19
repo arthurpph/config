@@ -2,10 +2,11 @@
 
 set -e
 
+
 REPO_URL="https://github.com/arthurpph/config.git"
 DOTFILES="$HOME/.dotfiles"
 
-echo "[1/3] Cloning dotfiles to $DOTFILES..."
+echo "[1/4] Cloning dotfiles to $DOTFILES..."
 if [ ! -d "$DOTFILES" ]; then
     git clone "$REPO_URL" "$DOTFILES"
 else
@@ -33,11 +34,15 @@ link() {
     echo "Linked: $src → $dest"
 }
 
-echo "[2/3] Creating symlinks..."
+echo "[2/4] Creating symlinks..."
 link nvim ~/.config/nvim
 link sway ~/.config/sway
 link tmux ~/.config/tmux
 link waybar ~/.config/waybar
 link alacritty ~/.config/alacritty
 
-echo "[3/3] Done! Dotfiles successfully installed."
+echo "[3/4] Installing Oh My Zsh"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" 
+
+echo "[4/4] Done! Dotfiles successfully installed."
+
