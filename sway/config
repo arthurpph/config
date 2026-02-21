@@ -234,9 +234,9 @@ bindsym $mod+g exec swaylock --screenshots --effect-greyscale
 bindsym $mod+m move workspace to output right
 
 assign [app_id="Alacritty"] 1
-assign [app_id="discord"] 2
+assign [class="discord"] 2
 assign [app_id="brave-browser"] 3
-for_window [title="Spotify"] move container to workspace number 4
+assign [app_id="spotify"] 4
 
 # fixes sway flameshot multi-monitor issue
 for_window [app_id="flameshot"] border pixel 0, floating enable, fullscreen disable, move absolute position 0 0
