@@ -11,6 +11,7 @@ vim.keymap.set("n", "<leader>pv", function()
     })
 end)
 
+vim.keymap.set({ "n", "v", "x" }, "<leader>ca", '<cmd>lua vim.lsp.buf.code_action()<CR>')
 vim.keymap.set("n", "<leader>db", "<cmd>lua require('dbee').open()<CR>")
 
 vim.keymap.set({ 'n', 'i' }, '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', { noremap = true, silent = true })
@@ -48,10 +49,6 @@ vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
-
-vim.keymap.set("n", "<leader>ca", function()
-    require("cellular-automaton").start_animation("make_it_rain")
-end)
 
 vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")
