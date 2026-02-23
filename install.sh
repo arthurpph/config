@@ -40,6 +40,7 @@ link sway ~/.config/sway
 link tmux ~/.config/tmux
 link waybar ~/.config/waybar
 link alacritty ~/.config/alacritty
+link qutebrowser ~/.config/qutebrowser
 
 echo "[3/4] Installing Oh My Zsh"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" 
