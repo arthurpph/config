@@ -19,6 +19,7 @@ return {
             vim.keymap.set("n", "<leader>gh", fzf.git_hunks)
             vim.keymap.set("n", "<leader>gb", fzf.git_branches)
             vim.keymap.set("n", "<leader>ds", "<cmd>FzfLua lsp_workspace_diagnostics<CR>", { desc = "FZF diagnostic" })
+            vim.keymap.set("n", "<leader>bf", fzf.buffers)
         end,
     }
 }
