@@ -156,3 +156,5 @@ c.url.searchengines = {'DEFAULT': 'https://google.com/search?q={}'}
 c.editor.command = ['nvim', '{file}']
 
 config.set("auto_save.session", True)
+
+c.colors.webpage.darkmode.enabled = True
