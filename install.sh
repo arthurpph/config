@@ -45,5 +45,7 @@ link qutebrowser ~/.config/qutebrowser
 echo "[3/4] Installing Oh My Zsh"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" 
 
+grep -qxF 'unset LESS;' "$HOME/.zshrc" || echo 'unset LESS;' >> "$HOME/.zshrc"
+
 echo "[4/4] Done! Dotfiles successfully installed."
 
