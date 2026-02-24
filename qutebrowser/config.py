@@ -158,3 +158,5 @@ c.editor.command = ['nvim', '{file}']
 config.set("auto_save.session", True)
 
 c.colors.webpage.darkmode.enabled = True
+
+config.bind('td', 'config-cycle colors.webpage.darkmode.enabled true false')

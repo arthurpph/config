@@ -235,7 +235,8 @@ bindsym $mod+m move workspace to output right
 
 assign [app_id="Alacritty"] 1
 assign [class="discord"] 2
-assign [app_id="brave-browser"] 3
+# assign [app_id="brave-browser"] 3
+assign [app_id="org.qutebrowser.qutebrowser"] 3
 assign [app_id="spotify"] 4
 
 # fixes sway flameshot multi-monitor issue
