@@ -13,6 +13,7 @@ return {
                     prompt = "Grep > ",
                 })
             end, { desc = "FZF grep string" })
+            vim.keymap.set("n", "<leader>rs", fzf.resume)
             vim.keymap.set("n", "<leader>gf", fzf.git_files, { desc = "FZF git files" })
             vim.keymap.set("n", "<leader>gc", fzf.git_commits)
             vim.keymap.set("n", "<leader>gbc", fzf.git_bcommits)
