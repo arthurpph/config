@@ -1,4 +1,5 @@
 local neotree = require("neo-tree.command")
+local dbee = require("dbee")
 
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>pv", function()
@@ -11,10 +12,10 @@ vim.keymap.set("n", "<leader>pv", function()
     })
 end)
 
-vim.keymap.set({ "n", "v", "x" }, "<leader>ca", '<cmd>lua vim.lsp.buf.code_action()<CR>')
-vim.keymap.set("n", "<leader>db", "<cmd>lua require('dbee').open()<CR>")
+vim.keymap.set({ "n", "v", "x" }, "<leader>ca", vim.lsp.buf.code_action)
+vim.keymap.set("n", "<leader>db", dbee.open)
 
-vim.keymap.set({ 'n', 'i' }, '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', { noremap = true, silent = true })
+vim.keymap.set({ 'n', 'i' }, '<C-k>', vim.lsp.buf.signature_help, { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>r', vim.lsp.buf.rename)
 vim.keymap.set("n", "<leader>e", function()
     vim.diagnostic.open_float({ focusable = true })
@@ -36,7 +37,6 @@ vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
-vim.keymap.set("n", "=ap", "ma=ap'a")
 
 vim.keymap.set("x", "<leader>p", [["_dP]])
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
