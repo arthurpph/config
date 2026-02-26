@@ -12,11 +12,7 @@ vim.keymap.set("n", "<leader>pv", function()
     })
 end)
 
-vim.keymap.set({ "n", "v", "x" }, "<leader>ca", vim.lsp.buf.code_action)
 vim.keymap.set("n", "<leader>db", dbee.open)
-
-vim.keymap.set({ 'n', 'i' }, '<C-k>', vim.lsp.buf.signature_help, { noremap = true, silent = true })
-vim.keymap.set('n', '<leader>r', vim.lsp.buf.rename)
 vim.keymap.set("n", "<leader>e", function()
     vim.diagnostic.open_float({ focusable = true })
 end, { desc = "Expand an Error into a float" })
