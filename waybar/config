@@ -2,7 +2,7 @@
   "layer": "bottom",
   "position": "bottom",
   "modules-left": ["sway/workspaces", "sway/mode"],
-  "modules-right": ["network#spd", "clock", "tray", "pulseaudio", "battery"],
+  "modules-right": ["network#spd", "backlight", "clock", "tray", "pulseaudio", "battery"],
   "tray": {
       "icon-size": 21,
       "spacing": 10
@@ -47,5 +47,12 @@
       "format": "↓ {bandwidthDownBytes} ↑ {bandwidthUpBytes}",
       "format-wifi": "↓ {bandwidthDownBytes} ↑ {bandwidthUpBytes}",
       "format-ethernet": "↓ {bandwidthDownBytes} ↑ {bandwidthUpBytes}"
+  },
+  "backlight": {
+      "device": "intel_backlight",
+      "format": "{percent}%",
+      "scroll-step": 5,
+      "on-scroll-up": "brightnessctl set +5%",
+      "on-scroll-down": "brightnessctl set 5%-"
   }
 }
