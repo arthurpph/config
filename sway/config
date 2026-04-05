@@ -236,7 +236,6 @@ bindsym $mod+m move workspace to output right
 
 assign [app_id="Alacritty"] 1
 assign [class="discord"] 2
-assign [app_id="Dorion"] 2
 assign [app_id="brave-browser"] 3
 assign [app_id="firefox"] 3
 assign [app_id="org.qutebrowser.qutebrowser"] 3
@@ -251,7 +250,7 @@ for_window [app_id="io.github.celluloid_player.Celluloid"] fullscreen enable
 for_window [app_id="flameshot"] border pixel 0, floating enable, fullscreen disable, move absolute position 0 0
 
 exec alacritty
-exec Dorion
+exec discord
 exec brave
 
 exec gpu-screen-recorder -w portal -restore-portal-session yes -f 60 -r 30 -c mp4 -a default_output -o ~/clips -bm cbr -q 35000
