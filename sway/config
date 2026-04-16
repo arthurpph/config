@@ -239,7 +239,7 @@ assign [class="discord"] 2
 assign [app_id="brave-browser"] 3
 assign [app_id="firefox"] 3
 assign [app_id="org.qutebrowser.qutebrowser"] 3
-assign [app_id="spotify"] 4
+assign [class="Spotify"] 4
 assign [class="steam"] 5
 
 for_window [app_id="pavucontrol"] floating enable
