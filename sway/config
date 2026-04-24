@@ -253,7 +253,7 @@ exec alacritty
 exec discord
 exec brave
 
-exec gpu-screen-recorder -w portal -restore-portal-session yes -f 60 -r 30 -c mp4 -a default_output -o ~/clips -bm cbr -q 35000
+exec gpu-screen-recorder -w portal -restore-portal-session yes -f 60 -r 60 -c mp4 -a default_output -o ~/clips -bm cbr -q 35000
 bindsym $mod+c exec pkill -SIGUSR1 -f gpu-screen-recorder
 
 input type:keyboard {
