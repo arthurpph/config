@@ -42,6 +42,7 @@ link waybar ~/.config/waybar
 link alacritty ~/.config/alacritty
 link qutebrowser ~/.config/qutebrowser
 link flameshot ~/.config/flameshot
+link wofi ~/.config/wofi
 
 echo "[3/4] Installing Oh My Zsh"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" 
