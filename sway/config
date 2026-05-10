@@ -207,7 +207,7 @@ bindsym $mod+r mode "resize"
     bindsym --locked XF86AudioNext exec playerctl next
     bindsym --locked XF86AudioPrev exec playerctl previous
 
-    bindsym Print exec sh -c 'flameshot gui'
+    bindsym Print exec grim -g "$(slurp)" - | swappy -f -
 
 #
 # Status Bar:
@@ -246,9 +246,6 @@ for_window [app_id="pavucontrol"] floating enable
 for_window [app_id="thunar"] floating enable
 for_window [app_id="io.github.celluloid_player.Celluloid"] fullscreen enable
 
-# fixes sway flameshot multi-monitor issue
-for_window [app_id="flameshot"] border pixel 0, floating enable, fullscreen disable, move absolute position 0 0
-
 exec alacritty
 exec discord
 exec brave
@@ -260,6 +257,19 @@ input type:keyboard {
   xkb_layout "us,br"
   xkb_variant ",abnt2"
   xkb_options "grp:alt_shift_toggle"
+}
+
+set $hiddenws "99"
+bindsym $mod+Shift+n move container to workspace number $hiddenws
+bindsym $mod+n exec "swaymsg workspace number 99; swaymsg mode restore"
+mode "restore" {
+    bindsym h focus left
+    bindsym j focus down
+    bindsym k focus up
+    bindsym l focus right
+    bindsym Return exec 'swaymsg move container to workspace back_and_forth; swaymsg mode "default"; swaymsg workspace back_and_forth'
+    bindsym Escape exec 'swaymsg mode "default"; swaymsg workspace back_and_forth'
+    bindsym $mod+Shift+n exec 'swaymsg mode "default"; swaymsg workspace back_and_forth'
 }
 
 include /etc/sway/config.d/*
