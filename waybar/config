@@ -1,58 +1,85 @@
 {
-  "layer": "bottom",
+  "layer": "top",
   "position": "bottom",
+  "height": 30,
+  "spacing": 6,
+  "margin-left": 0,
+  "margin-right": 0,
+  "margin-bottom": 0,
+
   "modules-left": ["sway/workspaces", "sway/mode"],
-  "modules-right": ["network#spd", "backlight", "clock", "tray", "pulseaudio", "battery"],
-  "tray": {
-      "icon-size": 21,
-      "spacing": 10
+  "modules-center": ["custom/music"],
+  "modules-right": ["network#spd", "backlight", "pulseaudio", "battery", "clock", "tray"],
+
+  "sway/workspaces": {
+    "disable-scroll": false,
+    "all-outputs": false,
+    "format": "{name}"
   },
+
+  "sway/mode": {
+    "format": "󰀘 {}"
+  },
+
   "clock": {
-      "interval": 1,
-      "format": "{:%H:%M:%S}",
-      "format-alt": "{:%a, %d. %b}",
-      "tooltip-format": "{:%a, %d. %b}"
+    "interval": 1,
+    "format": "󰥔 {:%H:%M}",
+    "format-alt": "󰃭 {:%a, %d %b}",
+    "tooltip-format": "{:%A, %d de %B de %Y}"
   },
+
   "pulseaudio": {
-    "scroll-step": 1, 
+    "scroll-step": 2,
     "format": "{icon} {volume}%",
-    "format-muted": "",
+    "format-muted": "󰝟 Muted",
     "format-icons": {
-        "default": ["", "", " "]
+      "headphone": "",
+      "headset": "󰋎",
+      "default": ["", "", ""]
     },
     "on-click": "pavucontrol"
   },
+
   "battery": {
-      "states": {
-          "warning": 30,
-          "critical": 15
-      },
-      "format": "{icon} {capacity}%",
-      "format-charging": "🔌 {capacity}%",
-      "format-plugged": "🔌 {capacity}%",
-      "format-alt": "{capacity}%",
-      "format-icons": ["🪫", "🔴", "🟠", "🟡", "🟢", "🔋"]
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": "󰂄 {capacity}%",
+    "format-plugged": "󰚥 {capacity}%",
+    "format-alt": "󰁹 {time}",
+    "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
   },
+
   "custom/music": {
-      "format": "  {}",
-      "escape": true,
-      "interval": 5,
-      "tooltip": false,
-      "exec": "playerctl metadata --format='{{ title }}'",
-      "on-click": "playerctl play-pause",
-      "max-length": 50
+    "format": "  {}",
+    "escape": true,
+    "interval": 3,
+    "tooltip": false,
+    "exec": "playerctl metadata --format='{{ artist }} - {{ title }}' 2>/dev/null || echo 'Sem música'",
+    "on-click": "playerctl play-pause",
+    "max-length": 60
   },
+
   "network#spd": {
-      "interval": 1,
-      "format": "↓ {bandwidthDownBytes} ↑ {bandwidthUpBytes}",
-      "format-wifi": "↓ {bandwidthDownBytes} ↑ {bandwidthUpBytes}",
-      "format-ethernet": "↓ {bandwidthDownBytes} ↑ {bandwidthUpBytes}"
+    "interval": 1,
+    "format": "󰇚 {bandwidthDownBytes} 󰕒 {bandwidthUpBytes}",
+    "format-wifi": "󰖩 󰇚 {bandwidthDownBytes} 󰕒 {bandwidthUpBytes}",
+    "format-ethernet": "󰈀 󰇚 {bandwidthDownBytes} 󰕒 {bandwidthUpBytes}",
+    "format-disconnected": "󰖪 Offline"
   },
+
   "backlight": {
-      "device": "intel_backlight",
-      "format": "{percent}%",
-      "scroll-step": 1,
-      "on-scroll-up": "brightnessctl set +1%",
-      "on-scroll-down": "brightnessctl set 1%-"
+    "device": "intel_backlight",
+    "format": "󰃠 {percent}%",
+    "scroll-step": 1,
+    "on-scroll-up": "brightnessctl set +1%",
+    "on-scroll-down": "brightnessctl set 1%-"
+  },
+
+  "tray": {
+    "icon-size": 18,
+    "spacing": 8
   }
 }
