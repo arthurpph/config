@@ -24,8 +24,8 @@
   "clock": {
     "interval": 1,
     "format": "󰥔 {:%H:%M}",
-    "format-alt": "󰃭 {:%a, %d %b}",
-    "tooltip-format": "{:%A, %d de %B de %Y}"
+    "tooltip-format": "{:%A, %d de %B de %Y}",
+    "on-click": "yad --calendar --undecorated --fixed --mouse"
   },
 
   "pulseaudio": {
