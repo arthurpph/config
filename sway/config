@@ -22,7 +22,7 @@ set $menu "j4-dmenu-desktop --dmenu='wmenu -i -l 10'"
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 # output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
-output * bg /home/arthurpiana/wallpapers/WallPaper\ 16.jpg fill #000000
+output * bg ~/wallpapers/WallPaper\ 16.jpg fill #000000
 
 #
 # Example configuration:
