@@ -57,8 +57,8 @@
     "escape": true,
     "interval": 3,
     "tooltip": false,
-    "exec": "playerctl metadata --format='{{ artist }} - {{ title }}' 2>/dev/null || echo 'Sem música'",
-    "on-click": "playerctl play-pause",
+    "exec": "playerctl -p spotify metadata --format='{{ artist }} - {{ title }}' 2>/dev/null || playerctl metadata --format='{{ artist }} - {{ title }}' 2>/dev/null || echo 'Sem música'",
+    "on-click": "playerctl -p spotify play-pause 2>/dev/null || playerctl play-pause",
     "max-length": 60
   },
 
