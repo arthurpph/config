@@ -247,6 +247,7 @@ assign [class="steam"] 5
 for_window [app_id="thunar"] floating enable, resize set 60 ppt 70 ppt, move position center
 for_window [app_id="pavucontrol"] floating enable, resize set 60 ppt 70 ppt, move position center
 for_window [app_id="io.github.celluloid_player.Celluloid"] fullscreen enable
+for_window [workspace="8"] floating enable
 
 exec alacritty
 exec discord
