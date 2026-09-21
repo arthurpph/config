@@ -1,0 +1,13 @@
+{
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "space",
+    ): System(InputSourceSwitch),
+    (
+        modifiers: [
+            Super,
+        ],
+    ): System(Launcher),
+}
