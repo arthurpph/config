@@ -3,11 +3,16 @@
         modifiers: [
             Super,
         ],
-        key: "space",
-    ): System(InputSourceSwitch),
+    ): System(Launcher),
+    (
+        modifiers: [],
+        key: "XF86AudioPlay",
+        description: Some("Spotify Media"),
+    ): Spawn("playerctl --player=spotify,firefox play-pause"),
     (
         modifiers: [
             Super,
         ],
-    ): System(Launcher),
+        key: "space",
+    ): System(InputSourceSwitch),
 }
