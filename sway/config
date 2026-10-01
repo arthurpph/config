@@ -262,6 +262,10 @@ input type:keyboard {
   xkb_options "grp:alt_shift_toggle"
 }
 
+input type:pointer {
+    pointer_accel -0.5
+}
+
 set $hiddenws "99"
 bindsym $mod+Shift+n move container to workspace number $hiddenws
 bindsym $mod+n exec "swaymsg workspace number 99; swaymsg mode restore"
